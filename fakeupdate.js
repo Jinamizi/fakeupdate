@@ -11,8 +11,14 @@ $(document).ready(function() {
     }
   });
 
+  //make the screen not sleep
+  if ('wakeLock' in navigator) {
+    $(document).hover(function(){
+      navigator.wakeLock.request(screen);
+    });
+  } 
 
-  let count = 95;
+  let count = 0;
   $("#timer").text(count);
   const timerInterval = setInterval(updateTimer, getRandomNumber(60000, 300000)); //set interval between 1 and 5 minutes
 
@@ -26,29 +32,4 @@ $(document).ready(function() {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
-
 });
-
-
-$(function() {
-  // Create a new script element with async attribute and set its source
-  $('<script>', {
-    async: true,
-    src: '//www.google-analytics.com/analytics.js'
-  }).appendTo('body'); // Append the script element to the body of the document
-
-  // Assign the ga function to window.ga or create a new one if it doesn't exist
-  window.ga = window.ga || function() {
-    (ga.q = ga.q || []).push(arguments);
-  };
-  ga.l = 1 * new Date(); // Set the timestamp for the ga function
-
-  // Create a new Google Analytics tracker with the specified tracking ID and 'auto' parameter
-  ga('create', 'UA-45751574-5', 'auto');
-
-  // Send a pageview hit to Google Analytics
-  ga('send', 'pageview');
-});
-
-
-
