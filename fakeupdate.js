@@ -18,6 +18,7 @@ $(document).ready(function() {
     });
   } 
 
+  var currentTime = new Date();
   let count = 0;
   $("#timer").text(count);
   const timerInterval = setInterval(updateTimer, getRandomNumber(60000, 300000)); //set interval between 1 and 5 minutes
@@ -26,6 +27,7 @@ $(document).ready(function() {
     //count = (++count == 100)? getRandomNumber(60, 90) : count;
     if (++count === 100) {count = getRandomNumber(60, 90)}
     $("#timer").text(count);
+    console.log(`${count} -> ${new Date().toLocaleString()}`);
   }
 
   function getRandomNumber(min, max) {
