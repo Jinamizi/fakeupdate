@@ -1,0 +1,47 @@
+
+  <!--
+    copy of https://fakeupdate.net/win10ue/
+    -- in the original, percentage goes past 100,
+    -- in this one, percentage does not go past 100, if it reach 99, it is reset to a random value between 60 - 90,
+    -- also it incoporates jQuery
+    -- css and script have been moved to a different files
+    -- cursor does not display on the screen while updating 
+    -- make it always active; no sleeping (Work in progress)
+  -->
+  <!DOCTYPE html>
+
+  <html>
+  <head>
+  <title>PRANK: restart (copy: https://fakeupdate.net/win10ue/)</title>
+
+  <!--tells the browser how to adjust the width and initial scale of the webpage to fit the device's screen.-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://code.jquery.com/jquery-latest.js"></script>
+  <script src="fakeupdate.js"></script>
+  <link rel="stylesheet" type="text/css" href="fakeupdate.css">
+ 
+  </head>
+  <body>
+  <div style="display:block;position:absolute;min-width:100%; min-height:100%;margin:0;padding:0;">
+  <div class="centeragain">
+  <div class="CT">
+  <div class="FONT">
+  <div class="loader" style="vertical-align:middle;padding-top:2px;">
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  </div>
+  <br><br>
+  <a id="ref" data-translate="_win10workingonupdates"><strong>Restarting</strong></a> 
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  <video mute loop style="z-index:-1;opacity:0.1;width:1px;height:1px;position:fixed;left:1px;bottom:1px;">
+  <!--<source src="../assets/pixel.mp4" type="video/mp4">
+  </video> -->
+  </body>
+  </html>
